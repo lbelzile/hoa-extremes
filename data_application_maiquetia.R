@@ -1,6 +1,5 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source('script_maiquetia.R')
-# setwd('..')
 library(evd)
 library(revdbayes)
 library(mev)
@@ -22,11 +21,17 @@ options(tikzLatexPackages =
 )
 
 setTikzDefaults(overwrite = FALSE)
+# Switch this boolean to TRUE to save figures
 figures <- FALSE
+fig_dir <- "figures"
+if(!dir.exists("figures")){
+  dir.create(fig_dir)
+}
 dwidth <- 6
 dheight <- 3.5
 # Load data
-data(maiquetia, package = "mev")
+load("data/maiquetia.rda")
+# data(maiquetia, package = "mev")
 
 # Data application: GP distribution for POT - excluding 1999
 dates <- seq.Date(from = as.Date("1961-01-01"), to = as.Date("1999-12-31"), by = "day")

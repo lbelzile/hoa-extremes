@@ -1,6 +1,6 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 source("script_oldage.R")
-setwd("..")
+
 library(mev)
 library(evd)
 library(xtable)
@@ -15,7 +15,26 @@ options(tikzLatexPackages =
           )
 )
 setTikzDefaults(overwrite = FALSE)
+figures <- FALSE
+fig_dir <- "figures"
+if(!dir.exists("figures")){
+  dir.create(fig_dir)
+}
+if(!dir.exists("tables")){
+  dir.create("tables")
+}
+# The following data is not publicly available
+# and is not distributed with the mev package
+# See https://github.com/lbelzile/supercentenarian
+# and the supplementary material of
+# https://doi.org/10.1098/rsos.202097
+# for instructions on how to access and format the data
 
+# The Istat data can be bought for a small fee from the
+# National Institute of Statistics by registering at
+# the Contact Center (https://contact.istat.it) and
+# mentioning the semi-supercentenarian Survey
+# and Marco Marsili as contact person.
 data(italcent, package = "mev")
 figures <- FALSE
 dwidth <- 6

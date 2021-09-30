@@ -383,7 +383,7 @@ par(mfrow = c(1,2), bty = "l", mar = c(4,4,1,1))
 plot(prof_std$psi, -prof_std$rstar^2/2, lwd = 2,
      lty = 2, col = "gray70", type = "l", ylim = c(-3,0.05),
      yaxs = "i", ylab = "profile log likelihood",
-     xlab = "median semicentenial maximum",
+     xlab = "median semicentennial maximum",
      yaxt = "n",
      panel.first = {abline(h = -qchisq(0.95,1)/2, col = "grey")})
 lines(prof_std$psi, -prof_std$r^2/2, lwd = 2,
@@ -406,7 +406,7 @@ legend(x = "topright",
 
 # Probability-probability plot
 plot(y=sort(punif), ppoints(length(punif)),
-     xlab = "theorical quantiles", ylab = "empirical quantiles",
+     xlab = "theoretical quantiles", ylab = "empirical quantiles",
      col = scales::alpha("black", 0.8),
      pch = 20, bty = "l", yaxs = "i", xaxs = "i",
      ylim = c(0,1),
